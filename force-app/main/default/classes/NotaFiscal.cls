@@ -1,6 +1,15 @@
-public  class NotaFiscal {
+public class NotaFiscal {
 
-    public void imprimeNota(String value) {
-        System.System.debug('Nota Fiscal' + value);
+    public String razaoSocial;
+    public String cnpj;
+
+
+    public void imprimeNotaFiscal (String value) {
+
+        String label = 'Nota Fiscal :) ';
+
+        System.debug( label + value);
+
     }
+
 }

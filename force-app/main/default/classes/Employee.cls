@@ -1,4 +1,4 @@
-public virtual class Employee {
+public abstract class Employee {
 
     public String name;
     public String code;
@@ -7,5 +7,7 @@ public virtual class Employee {
     public void show () {
         System.debug(JSON.serialize( this ));
     }
+   
+    public abstract Decimal getBonus ();
 
 }

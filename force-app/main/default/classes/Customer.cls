@@ -13,13 +13,33 @@ public class Customer {
     public String billingState;
 
     //Declaração de construtor sem parâmetros
-    public Customer() {
-        System.debug('Criando Customer');
+    public Customer () {
+
     }
 
-    public Customer(String code) {
+    public Customer (String code) {
         this.code = code;
     }
+
+    public Customer (String code, String name) {
+        this.code = code;
+        this.name = name;
+    }
+
+    public Customer (String billingStreet, String billingCity
+                    , String billingState ) {
+
+
+
+    }
+
+    public Customer (String code
+                    , String name
+                    , String billingStreet
+                    , String billingCity
+                    , String billingState ) {
+
+    }  
 
     //conceito de sobrecarga leva em consideração tipo, quantidade e ordem de parâmetros
     //dois construtores com duas strings no parâmetro não serão aceitos
@@ -30,5 +50,21 @@ public class Customer {
     public void show() {
 
         System.debug( JSON.serialize (this) );
+    }
+
+    public void debugLog () {
+        System.debug ( JSON.serialize ( this ) );
+    }
+
+    public void show (Boolean showLog) {
+        if (showLog) {
+            System.debug ( JSON.serialize ( this ) );
+        }       
+
+    }
+
+    public Boolean login (String username, String password) {
+        System.debug('Customer login: ' + username + ' ' + password);
+        return true;
     }
 }
