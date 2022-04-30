@@ -1,0 +1,25 @@
+SELECT Id, Name, BillingStreet, BillingCountry
+FROM Account
+WHERE 
+BillingStreet != null
+
+SELECT Name, Email, AccountId, Account.Name
+    , Account.CNAE__r.CnaeCode__c
+FROM Contact
+WHERE Account.CNAE__c != null
+
+
+SELECT Name, Email, AccountId
+    , Account.Name, Account.CNAE__r.CnaeCode__c 
+FROM Contact 
+WHERE Account.CNAE__c != null
+
+
+SELECT Name, Id 
+FROM Account 
+WHERE Id IN ( SELECT AccountId 
+                FROM Contact 
+                WHERE AccountId != null )
+
+
+SELECT Name, Id, (SELECT Id, Name, Email FROM Contacts) FROM Account
